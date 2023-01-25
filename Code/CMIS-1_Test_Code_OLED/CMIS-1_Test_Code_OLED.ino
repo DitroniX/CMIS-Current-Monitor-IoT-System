@@ -1,15 +1,15 @@
 /*
-  Dave Williams, DitroniX 2019-2022 (ditronix.net)
+  Dave Williams, DitroniX 2019-2023 (ditronix.net)
   CMIS-1 Current Monitor IoT Sensors v1.0
-  Features include ESP32, LDO5V, LDO3V3, MODBUS, EEPROM, CT Clamp, AC/DC Multi-Current Sensors, Voltage Sensor, NTC, D1 Flashing Compatible
-  PCA 1.2211-105 - Test Code Firmware v1 - 2nd September 2022
+  Features include ESP32 MODBUS EEPROM CT Clamp Multi-Current Sensors Voltage OLED
+  PCA v1.2211-105 - Test Code Firmware v1 - 18th January 2023
 
   Simplified Board Bring Up Test - OLED Display via I2c (Heatbeat LED)
-
+  
   Remember!
-  - Set the BOARD to ESP32, 'WEMOS D1 MINI ESP32' DEV Module (or similar).
-  - You may set the BAUD rate to 921600 to speed up flashing.
-  - The SDK does NOT need external power to flash.  It will take Power from the USB 5V.
+  Set the BOARD to ESP32, 'WEMOS D1 MINI ESP32' DEV Module (or similar).
+  You may set the BAUD rate to 921600 to speed up flashing.
+  The SDK does NOT need external power to flash.  It will take Power from the USB 5V.
   
   Note: In the default state, upon first power up and during reset, the Green LED may be partially lit. Once programmed and the GPIO defined, the Green LED will go off after power up.
 
@@ -36,7 +36,7 @@ float TestCount = 0;
 
 // OLED Instance. You will need to select your OLED Display.  
 // Uncomment/Comment as needed.
-GyverOLED<SSD1306_128x32, OLED_BUFFER> oled;
+GyverOLED<SSD1306_128x32, OLED_BUFFER> oled;  // 0.6" OLED
 //GyverOLED<SSD1306_128x32, OLED_NO_BUFFER> oled;
 //GyverOLED<SSD1306_128x64, OLED_BUFFER> oled;
 //GyverOLED<SSD1306_128x64, OLED_NO_BUFFER> oled;

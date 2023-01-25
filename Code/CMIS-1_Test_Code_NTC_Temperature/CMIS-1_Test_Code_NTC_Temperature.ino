@@ -1,15 +1,15 @@
 /*
-  Dave Williams, DitroniX 2019-2022 (ditronix.net)
+  Dave Williams, DitroniX 2019-2023 (ditronix.net)
   CMIS-1 Current Monitor IoT Sensors v1.0
-  Features include ESP32, LDO5V, LDO3V3, MODBUS, EEPROM, CT Clamp, AC/DC Multi-Current Sensors, Voltage Sensor, NTC, D1 Flashing Compatible
-  PCA 1.2211-105 - Test Code Firmware v1 - 30th September 2022
+  Features include ESP32 MODBUS EEPROM CT Clamp Multi-Current Sensors Voltage OLED
+  PCA v1.2211-105 - Test Code Firmware v1 - 18th January 2023
 
   Simplified Board Bring Up Test - NTC Temperature (Output sent to Serial Print)
-
+  .
   Remember!
-  - Set the BOARD to ESP32, 'WEMOS D1 MINI ESP32' DEV Module (or similar).
-  - You may set the BAUD rate to 921600 to speed up flashing.
-  - The SDK does NOT need external power to flash.  It will take Power from the USB 5V.
+  Set the BOARD to ESP32, 'WEMOS D1 MINI ESP32' DEV Module (or similar).
+  You may set the BAUD rate to 921600 to speed up flashing.
+  The SDK does NOT need external power to flash.  It will take Power from the USB 5V.
   
   Note: In the default state, upon first power up and during reset, the Green LED may be partially lit. Once programmed and the GPIO defined, the Green LED will go off after power up.
 
@@ -57,7 +57,7 @@ void setup() {
 void loop() {
 
   int Vo;
-  float R1 = 10000;
+  float R1 = 10000; // May need calibrating
   float logR2, R2, T, Tc, Tf;
   float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07;
   

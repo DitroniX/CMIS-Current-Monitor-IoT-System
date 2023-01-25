@@ -2,7 +2,7 @@
   Dave Williams, DitroniX 2019-2023 (ditronix.net)
   CMIS-1 Current Monitor IoT Sensors v1.0
   Features include ESP32 MODBUS EEPROM CT Clamp Multi-Current Sensors Voltage OLED
-  PCA v1.2211-105 - Test Code Firmware v1 - 14th January 2023
+  PCA v1.2211-105 - Test Code Firmware v1 - 18th January 2023
   
   Simplified Board Bring Up Test - Wifi Scan
   
@@ -25,6 +25,11 @@
 // ######### OBJECTS #########
 WiFiClient client; // Initialize the client library
 
+// **************** OUTPUTS ****************
+#define LED_Red 2 // Red LED
+#define LED_Green 4 // Green LED
+
+
 // **************** SETUP ****************
 void setup() {
 
@@ -34,6 +39,15 @@ void setup() {
   // Initialize UART:
   Serial.begin(115200, SERIAL_8N1);  //115200
   while (!Serial);
+
+    // LEDs
+  pinMode(LED_Red, OUTPUT);
+  pinMode(LED_Green, OUTPUT);
+
+  // LEDs Default Off State
+  digitalWrite(LED_Red, HIGH);
+  digitalWrite(LED_Green, HIGH);
+
 
   // Set WiFi to station mode and disconnect from an AP if it was previously connected
   WiFi.mode(WIFI_STA);
@@ -71,4 +85,9 @@ void loop() {
     }
   }
   Serial.println("");
+
+    // Heatbeat LED
+  digitalWrite(LED_Red, LOW);
+  delay(50);
+  digitalWrite(LED_Red, HIGH);
 }

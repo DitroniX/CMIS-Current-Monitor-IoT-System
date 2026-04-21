@@ -2,6 +2,8 @@
 
 CMIS features include ESP32 MODBUS EEPROM CT Clamp Multi-Current Voltage
 
+UPDATE: 20th April 2026.  This evaluation board is no longer supported.
+
 ![Display-Type-B](https://ditronix.net/wp-content/uploads/2022/09/CMIS-1-2209-102-PCB-Populated-No-PTH-scaled.jpg?raw=true)
 
 Specification overview:
